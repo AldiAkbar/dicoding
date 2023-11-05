@@ -2,23 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Halaman Profil Bandung</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <h1>
+      <div class="jumbotron">
+        <h1>
         <a
           href="https://www.google.com/maps/place/Bandung,+Kota+Bandung,+Jawa+Barat/@-6.9034495,107.6431575,12z/data=!3m1!4b1!4m6!3m5!1s0x2e68e6398252477f:0x146a1f93d3e815b2!8m2!3d-6.9174639!4d107.6191228!16zL20vMDF6bGw4?entry=ttu"
           >Bandung</a
-        >
-      </h1>
-      <p>
-        <strong><em>Kota</em></strong> metropolitan terbesar di Provinsi Jawa
+          >
+        </h1>
+        <p>
+        Kota metropolitan terbesar di Provinsi Jawa
         Barat, sekaligus menjadi ibu kota provinsi tersebut.
-      </p>
+        </p>
+      </div>
       <nav>
-        <ol>
+        <ul>
           <li>
             <a href="#sejarah">Sejarah</a>
           </li>
@@ -28,18 +39,15 @@
           <li>
             <a href="#wisata">Wisata</a>
           </li>
-        </ol>
+        </ul>
       </nav>
     </header>
 
     <main>
       <div id="content">
-        <article id="sejarah">
+        <article id="sejarah" class="card">
           <h2>Sejarah</h2>
-          <img
-            src="halaman-profil-bandung-images/image/history.jpg"
-            alt="Sejarah"
-          />
+          <img src="assets/image/history.jpg" alt="Sejarah" class="featured-image" />
           <p>
             Kata Bandung berasal dari kata bendung atau bendungan karena
             terbendungnya sungai Citarum oleh lava Gunung Tangkuban Parahu yang
@@ -63,12 +71,9 @@
           </p>
         </article>
 
-        <article id="geografis">
+        <article id="geografis" class="card">
           <h2>Geografis</h2>
-          <img
-            src="halaman-profil-bandung-images/image/geografis.jpg"
-            alt="Geografis"
-          />
+          <img src="assets/image/geografis.jpg" alt="Geografis" class="featured-image" />
           <blockquote>
             <p>
               Kota Bandung dikelilingi oleh pegunungan, sehingga bentuk
@@ -80,16 +85,17 @@
               rendah dengan ketinggian 675 meter di atas permukaan laut.
             </p>
           </blockquote>
-          <pre>
-      <p>
-        Kota Bandung dialiri dua sungai utama, yaitu Sungai Cikapundung dan Sungai Citarum beserta
-        anak-anak sungainya yang pada umumnya mengalir ke arah selatan dan bertemu di Sungai Citarum.
-        Dengan kondisi yang demikian, Bandung selatan sangat rentan terhadap masalah banjir terutama
-        pada musim hujan.
-      </p>
-          </pre>
+          <!-- <pre> -->
+          <p>
+            Kota Bandung dialiri dua sungai utama, yaitu Sungai Cikapundung dan
+            Sungai Citarum beserta anak-anak sungainya yang pada umumnya
+            mengalir ke arah selatan dan bertemu di Sungai Citarum. Dengan
+            kondisi yang demikian, Bandung selatan sangat rentan terhadap
+            masalah banjir terutama pada musim hujan.
+          </p>
+          <!-- </pre> -->
         </article>
-        <article id="wisata">
+        <article id="wisata" class="card">
           <h2>Wisata</h2>
           <figure>
             <p>
@@ -103,10 +109,7 @@
 
           <section>
             <h3>Farm House Lembang</h3>
-            <img
-              src="halaman-profil-bandung-images/image/farm-house.jpg"
-              alt="Farm House Lembang"
-            />
+            <img src="assets/image/farm-house.jpg" alt="Farm House Lembang" class="featured-image" />
             <p>
               Berada di jalur utama Bandung-Lembang, Farm House menjadi objek
               wisata yang tidak pernah sepi pengunjung. Selain karena letaknya
@@ -117,10 +120,7 @@
 
           <section>
             <h3>Observatorium Bosscha</h3>
-            <img
-              src="halaman-profil-bandung-images/image/bosscha.jpg"
-              alt="Observatorium Bosscha"
-            />
+            <img src="assets/image/bosscha.jpg" alt="Observatorium Bosscha" class="featured-image" />
             <p>
               Memiliki beberapa teleskop, antara lain, Refraktor Ganda Zeiss,
               Schmidt Bimasakti, Refraktor Bamberg, Cassegrain GOTO, dan
@@ -138,12 +138,12 @@
       </div>
 
       <aside>
-        <article>
+        <article class="profile card">
           <header>
             <h2>Kota Bandung</h2>
             <p>Kota Kembang Paris van Java</p>
             <figure>
-              <img src="halaman-profil-bandung-images/image/Bandung_coa.png" />
+              <img src="assets/image/Bandung_coa.png" />
               <figcaption>Lambang</figcaption>
             </figure>
           </header>
@@ -151,10 +151,10 @@
           <section>
             <h3>Informasi Lainnya</h3>
 
-            <table border="">
-              <tr>
+            <table /*border=""*/>
+              <!-- <tr>
                 <th colspan="2">Deskripsi</th>
-              </tr>
+              </tr> -->
               <tr>
                 <th>Negara</th>
                 <td>Indonesia</td>
@@ -175,30 +175,27 @@
                 <th>Kode Telepon</th>
                 <td>+62 22</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <th rowspan="2">Jenis Kelamin</th>
                 <td>Laki-laki</td>
               </tr>
               <tr>
                 <td>Perempuan</td>
-              </tr>
+              </tr> -->
             </table>
           </section>
         </article>
       </aside>
     </main>
 
-    <p>
+    <!-- <p>
       C<sub>12</sub>H<sub>22</sub>O<sub>11</sub><br />
       E=MC<sup>2</sup>
-    </p>
+    </p> -->
 
-    <footer>
-      <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy </p>
-      &copy; 2019, Dicoding Academy
+    <footer /*class="footbor"*/>
+      <p>Belajar Dasar Pemrograman Web &#169; 2023, Dicoding Academy</p>
+      &copy; 2023, Dicoding Academy
     </footer>
-
-
-    
   </body>
 </html>

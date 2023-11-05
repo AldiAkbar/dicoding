@@ -1,0 +1,312 @@
+
+if (score >= 90) {
+    result = 'Selamat! Anda mendapatkan nilai A.';
+  } else if (score >= 80 && score <= 89) {
+    result = 'Anda mendapatkan nilai B.';
+  } else if (score >= 70 && score <= 79) {
+    result = 'Anda mendapatkan nilai C.';
+  } else if (score >= 60 && score <= 69) {
+    result = 'Anda mendapatkan nilai D.';
+  } else {
+    result = 'Anda mendapatkan nilai E.';
+  }
+  
+
+
+
+
+
+  const restaurant = {
+    name : 'Bakso Mang Dicoding',
+    city : 'Bandung',
+    "favorite drink" : 'Es Teh',
+    "favorite food" : 'Bakso',
+    isVegan : false
+  };
+
+  const name = 'Bakso Mang Dicoding';
+  const favoriteDrink = 'Es Teh';
+
+
+
+
+
+
+
+let evenNumber = [];
+for(let i=2; i <= 100; i +=2) {
+  evenNumber.push(i);
+}
+
+console.log(evenNumber);
+
+
+
+
+const priceInJPY = 5000;
+const currency = new Map([
+  ["USD", 14000]
+  ["JPY", 131]
+  ["SGD", 11000]
+  ["MYR", 3500]
+]);
+
+const priceIDR = priceInJPY * currency.get(JPY);
+console.log(`harga dalam IDR ${priceIDR}`)
+
+
+
+
+function minimal(a, b) {
+  if ( a <= b ) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+// console.log(12, 20)
+
+function findIndex(array, number) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === number) {
+      return i;
+    }
+  }
+  return -1;
+}
+// console.log(findIndex([1,2,3,4,5,6],1))
+
+
+
+
+class Animal {
+  constructor(name, age, isMammal) {
+    this.name = name;
+    this.age = age;
+    this.isMammal = isMammal;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age) {
+    super(name, age, true);
+  }
+
+  eat() {
+    return `${this.name} sedang makan!`;
+  }
+}
+
+class Eagle extends Animal {
+  constructor(name, age) {
+    super(name, age, false);
+  }
+
+  fly() {
+    return `${this.name} sedang terbang!`;
+  }
+}
+
+const myRabbit = new Rabbit("Labi", 2);
+const myEagle = new Eagle("Elo", 4);
+
+
+
+
+
+
+
+const greatAuthors = books
+  .filter(book => book.sales > 1000000)
+  .map(book => `${book.author} adalah penulis buku ${book.title} yang sangat hebat!`);
+
+console.log(greatAuthors);
+
+
+
+
+
+/**
+ * Saat ini, Anda sudah memiliki fungsi detectTriangle yang berguna untuk
+ * mendeteksi jenis segitiga berdasarkan nilai argumen.
+ * Contoh:
+ *  - 1, 1, 1 -> Segitiga sama sisi
+ *  - 4, 4, 2 -> Segitiga sama kaki
+ *  - 3, 4, 6 -> Segitiga sembarang
+ *
+ * Namun fungsi detectTriangle belum berjalan dengan baik karena
+ * bila ada argumen fungsi yang bukan number, alih-alih error, ia akan mengembalikan "Segitiga sembarang".
+ * Contoh:
+ *  - 1, false, 1 -> Segitiga sembarang
+ *  - 'a', 3, 5 -> Segitiga sembarang
+ *  - 12, 2, null -> Segitiga sembarang
+ * Kondisi yang diharapkan:
+ *  - 1, false, 1 -> Argumen kedua harus number
+ *  - 'a', 3, 5 -> Argumen pertama harus number
+ *  - 12, 2, null -> Argumen ketiga harus number
+ *
+ *  Tugas Anda adalah memperbaiki fungsi detectTriangle agar berjalan dengan kondisi yang diharapkan.
+ *  Pastikan Anda menggunakan teknik Throwing dan Handling Error yah.
+ *
+ * TODO 1:
+ * - Buatlah class ValidationError yang merupakan custom error dengan spesifikasi berikut:
+ *   - Turunan dari class Error
+ *   - Memiliki constructor(message)
+ *   - this.name harus bernilai "ValidationError"
+ *
+ * TODO 2:
+ * - Buatlah fungsi validateNumberInput yang memvalidasi 3 buah input (argumen) dengan spesifikasi berikut:
+ *   - Menerima 3 argumen
+ *   - Bila argumen pertama bukan number:
+ *     - throw ValidationError dengan pesan 'Argumen pertama harus number'
+ *   - Bila argumen kedua bukan number:
+ *     - throw ValidationError dengan pesan 'Argumen kedua harus number'
+ *   - Bila argumen ketiga bukan number:
+ *     - throw ValidationError dengan pesan 'Argumen ketiga harus number'
+ *
+ * TODO 3:
+ * - Panggil fungsi validateNumberInput di dalam fungsi detectTriangle untuk memvalidasi nilai argumen a, b, dan c.
+ *   - pastikan Anda memanggil validateNumberInput menggunakan try .. catch.
+ *   - bila block catch terpanggil, kembalikan fungsi detectTriangle dengan pesan error yang dibawa fungsi validateNumberInput.
+ */
+// TODO 1
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'ValidationError';
+  }
+}
+// TODO 2
+const validateNumberInput = (a, b, c) => {
+  if (typeof a !== 'number') {
+    throw new ValidationError('Argumen pertama harus number');
+  }
+
+  if (typeof b !== 'number') {
+    throw new ValidationError('Argumen kedua harus number');
+  }
+
+  if (typeof c !== 'number') {
+    throw new ValidationError('Argumen ketiga harus number');
+  }
+}
+const detectTriangle = (a, b, c) => {
+  // TODO 3
+try {
+    validateNumberInput(a, b, c);
+  if (a === b && b === c) {
+    return 'Segitiga sama sisi';
+  }
+
+  if (a === b || a === c || b === c) {
+    return 'Segitiga sama kaki';
+  }
+
+  return 'Segitiga sembarang';
+} catch (error) {
+    return error.message; 
+  }
+};
+
+
+
+
+const util = require('util');
+
+function getProvinces(countryId) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (countryId === 'id') {
+        resolve([
+          { id: 'id-jk', name: 'Jakarta' },
+          { id: 'id-bt', name: 'Banten' },
+          { id: 'id-jr', name: 'Jawa Barat' },
+        ]);
+      } else {
+        reject(new Error('Country not found'));
+      }
+    }, 1000);
+  });
+}
+
+module.exports = { getProvinces };
+
+
+
+
+
+
+// in utils.js
+function buyTollRoadCard(money) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (money >= 25) {
+        console.log('buying card');
+        resolve({ tollRoadCard: true, balance: 0 });
+        return;
+      }
+
+      reject(new Error('not enough money to buy card'));
+    }, 1000);
+  });
+}
+
+function topUpBalance(card, amount) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (card) {
+        console.log('topping up balance');
+        resolve({ ...card, balance: card.balance + amount });
+        return;
+      }
+
+      reject(new Error('no card'));
+    }, 1000);
+  });
+}
+
+
+function useTollRoad(card) {
+  const TOLL_PRICE = 10;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (card.balance < TOLL_PRICE) {
+        reject(new Error('not enough balance'));
+        return;
+      }
+
+      card.balance -= TOLL_PRICE;
+
+      console.log('using toll road');
+      resolve();
+    }, 1000);
+  });
+}
+
+module.exports = {
+  buyTollRoadCard,
+  topUpBalance,
+  useTollRoad,
+}
+
+
+
+// in main.js
+const { buyTollRoadCard, topUpBalance, useTollRoad } = require('./utils');
+
+async function getTollAccess() {
+  try {
+    // Langkah 1: Beli kartu tol
+    const card = await buyTollRoadCard(25);
+    // Langkah 2: Isi saldo kartu tol
+    const updatedCard = await topUpBalance(card, 10);
+    // Langkah 3: Gunakan akses jalan toll
+    await useTollRoad(updatedCard);
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+getTollAccess();

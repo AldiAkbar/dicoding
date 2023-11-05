@@ -1,0 +1,46 @@
+1. a:hover {} untuk memberi tampilan saat cursor d arahkan ke target
+2. blockquote::before,
+    blockquote::after{} untuk menambahkan konten sebelum dan sesudah 
+                        sebuah elemen paragraf
+3.p::first-letter{} styling pada katakter pertama di sebuah paragraf
+4.fonr style
+    font-family: menetapkan jenis font yang akan diterapkan pada target.
+    font-size  : menentukan ukuran pada teks.
+    font-weight: menentukan ketebalan pada teks. 
+    font-style: menetapkan styling yang diterapkan pada teks.
+    font-variant: menentukan teks untuk menggunakan gaya small caps (huruf kapital kecil).
+    font: sebagai shorthand dari properti font yang ada.
+5. line-height untuk jarak antar baris pada paragaf
+6. text-indent untuk jarak awal paragraf (tab)
+7. text-align untuk meratakan text
+8. text-decoration untuk memberikan garis pada text
+9. text-transfom untuk mengubah kapitalisasi pada sebuah text
+10. letter-spacing untuk mengatur jarak antar huruf
+11. word-spacing untuk mengatur jarak antar kata
+12. text-shadow: 2px 2px 0px #000000; untuk memberikan bayangan pada text
+13. background-color untuk memberi wana background
+14. padding untk memberi jarak antara konten dan pinggiran kotak elemen
+15. opacity => persentase untuk seberapa besar tingkat keterlihatan objek
+16. float untuk mengatur bagaimana elemen HTML akan berinteraksi satu sama lain  di dalam tata letak halaman web yang berada dalam kontainer yang sama
+17. padding adalah ruang kosong antara konten dengan border
+18. Border adalah garis tepi
+19. margin adalah jarak dari elemen ke elemen lain
+20. object-fit:cover;           untuk mengpaskan gambar dengan 
+    object-position: center;    box yg sudah kita buat dan atur
+21. position: relative; untuk membuat elemen keluar dari static flow tanpa memengaruhi elemen yang berada pada static flow, contohnya menggeser gambar tanpa mempengaruhi element lain, dan elemen lain akan tetap pada posisinya
+23.clear:left; properti untuk menormalkan float yg tidak sesuai (karena hanya ada satu element) namun harus buat dulu div kosong dan beri kelas
+24.clear: both; jika ada 2 elemen yang menerapkan nilai float dan kacau
+25. overflow: auto; fungsinya sama dengan clear, masukan di container pembungkus element
+26. box-sizing: border-box; menyesuaikan box dgn conten+padding+border
+27. display: inline; sejajarkan beberapa element
+    display: box; ke bawah
+
+
+28. <meta name="viewport" content="width=device-width, initial-scale=1.0" />  --> di simpan di bagian head
+    @media screen and (max-width: 1000px) {
+    #content, aside {
+    width: 100%;
+    padding: 0;
+        }
+       }
+ untuk tampilan handphone
